@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.shoppingmall.controller.LoginController"
+            prefWidth="900.0" prefHeight="540.0" styleClass="root-pane">
+    <children>
+        <HBox spacing="0.0" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0"
+              AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <children>
+                <VBox spacing="16.0" prefWidth="450.0" styleClass="left-panel">
+                    <children>
+                        <Label text="Shopping Mall" styleClass="app-title"/>
+                    </children>
+                </VBox>
+                <VBox spacing="12.0" prefWidth="450.0" styleClass="right-panel">
+                    <children>
+                        <Label text="Sign In / Sign Up" styleClass="panel-title"/>
+
+                        <TextField fx:id="usernameField" promptText="Username" styleClass="text-input"/>
+                        <PasswordField fx:id="passwordField" promptText="Password" styleClass="text-input"/>
+
+                        <Separator/>
+
+                        <TextField fx:id="fullNameField" promptText="Full name (for sign up)" styleClass="text-input"/>
+                        <TextField fx:id="emailField" promptText="Email (for sign up)" styleClass="text-input"/>
+                        <TextField fx:id="initialBalanceField" promptText="Initial balance (e.g. 100.00)" styleClass="text-input"/>
+
+                        <HBox spacing="10.0">
+                            <children>
+                                <Button text="Login" onAction="#handleLogin" styleClass="primary-button"/>
+                                <Button text="Register" onAction="#handleRegister" styleClass="secondary-button"/>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>
+
+
+

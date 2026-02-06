@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.shoppingmall.controller.AdminProductController"
+            prefWidth="960.0" prefHeight="600.0" styleClass="root-pane">
+    <top>
+        <HBox spacing="16.0" styleClass="top-bar">
+            <padding>
+                <Insets top="16.0" right="16.0" bottom="16.0" left="16.0"/>
+            </padding>
+            <children>
+                <Label text="Admin - Product Management" styleClass="top-title"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="Logout" onAction="#handleLogout" styleClass="danger-button"/>
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <TableView fx:id="productTable" prefHeight="400.0">
+            <columns>
+                <TableColumn fx:id="idColumn" text="ID" prefWidth="60.0"/>
+                <TableColumn fx:id="nameColumn" text="Name" prefWidth="200.0"/>
+                <TableColumn fx:id="categoryColumn" text="Category" prefWidth="150.0"/>
+                <TableColumn fx:id="priceColumn" text="Price" prefWidth="120.0"/>
+                <TableColumn fx:id="stockColumn" text="Stock" prefWidth="100.0"/>
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <VBox spacing="8.0" styleClass="bottom-bar">
+            <padding>
+                <Insets top="16.0" right="16.0" bottom="16.0" left="16.0"/>
+            </padding>
+            <children>
+                <HBox spacing="8.0">
+                    <children>
+                        <TextField fx:id="nameField" promptText="Name" styleClass="text-input"/>
+                        <TextField fx:id="categoryField" promptText="Category" styleClass="text-input"/>
+                        <TextField fx:id="priceField" promptText="Price" styleClass="text-input"/>
+                        <TextField fx:id="stockField" promptText="Stock" styleClass="text-input"/>
+                    </children>
+                </HBox>
+                <HBox spacing="8.0">
+                    <children>
+                        <Button text="Add" onAction="#handleAdd" styleClass="primary-button"/>
+                        <Button text="Update" onAction="#handleUpdate" styleClass="secondary-button"/>
+                        <Button text="Delete" onAction="#handleDelete" styleClass="danger-button"/>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </bottom>
+</BorderPane>
+
+

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.shoppingmall.controller.CartController"
+            prefWidth="800.0" prefHeight="520.0" styleClass="root-pane">
+    <top>
+        <HBox spacing="12.0" styleClass="top-bar">
+            <padding>
+                <Insets top="16.0" right="16.0" bottom="16.0" left="16.0"/>
+            </padding>
+            <children>
+                <Label text="Your Cart" styleClass="top-title"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="Back to Catalog" onAction="#handleBackToCatalog" styleClass="secondary-button"/>
+                <Button text="Logout" onAction="#handleLogout" styleClass="danger-button"/>
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <TableView fx:id="cartTable" prefHeight="400.0">
+            <columns>
+                <TableColumn fx:id="productColumn" text="Product" prefWidth="250.0"/>
+                <TableColumn fx:id="quantityColumn" text="Quantity" prefWidth="100.0"/>
+                <TableColumn fx:id="totalColumn" text="Total" prefWidth="120.0"/>
+                <TableColumn fx:id="actionsColumn" text="Actions" prefWidth="200.0"/>
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <HBox spacing="16.0" styleClass="bottom-bar">
+            <padding>
+                <Insets top="16.0" right="16.0" bottom="16.0" left="16.0"/>
+            </padding>
+            <children>
+                <Label fx:id="totalLabel" text="Total: $0.00" styleClass="total-label"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="Clear Cart" onAction="#handleClearCart" styleClass="secondary-button"/>
+                <Button text="Checkout" onAction="#handleCheckout" styleClass="primary-button"/>
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>
+
+
